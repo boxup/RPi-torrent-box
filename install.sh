@@ -2,11 +2,12 @@
 
 #### User Preferences ####
 ##########################
-# MAX_DOWN: Maximum download speed of a torrent
-# MAX_UP: Maximum upload speed of a torrent
 # MAX_JOBS: Maximum number of torrents running
 # EXT_NAME: Name of your external storage device
-# EXT_OWNER: User owning the external drive, typically pi
+# TRANS_USERNAME: Username to login to the web-interface of transmission
+# TRANS_PASSWORD: Password to login to the web-interface of transmission
+# EXT_OWNER1: User owning the external drive, typically pi
+# EXT_OWNER2: User owning the external drive, typically pi
 
 MAX_JOBS="5";
 EXT_NAME="RAMAUSB";
