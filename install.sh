@@ -30,6 +30,7 @@ DIR_INCOMPLETE=/media/pi/$EXT_NAME/RPi_torrent_downloads/incomplete
 
 echo 'Modify Transmission settings.json file'
 #sudo service transmission-daemon stop
+sed -i 's/^.*rpc-whitelist.*$/ "rpc-whitelist": "192.168.*.*"/' /etc/transmission-daemon/settings.json
 
 # Remove lines
 sudo grep -v "download-queue-size" /etc/transmission-daemon/settings.json > temp && mv temp /etc/transmission-daemon/settings.json
@@ -82,7 +83,6 @@ echo 'Extra stuff'
 sudo systemctl daemon-reload
 
 sudo mkdir -p /home/pi/.config/transmission-daemon/
-sudo rm -f /home/pi/.config/transmission-daemon/settings.json
 sudo ln -sf /etc/transmission-daemon/settings.json /home/pi/.config/transmission-daemon/
 sudo chown -R pi:pi /home/pi/.config/transmission-daemon/
 
